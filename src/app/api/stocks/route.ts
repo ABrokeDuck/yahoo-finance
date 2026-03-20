@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-// import YahooFinance from 'yahoo-finance2';
-// const yahooFinance = new YahooFinance();
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -13,22 +11,18 @@ export async function GET(request: Request) {
   }
 
   try {
-    // const quotes = await Promise.all(
-    //   symbols.map(async (symbol) => {
-    //     try {
-    //       const quote = await yahooFinance.quote(symbol);
-    //       return quote;
-    //     } catch (error) {
-    //       console.error(`Error fetching ${symbol}:`, error);
-    //       return null;
-    //     }
-    //   })
-    // );
+    const mockQuotes = symbols.map(symbol => ({
+      symbol,
+      shortName: `${symbol} Company`,
+      regularMarketPrice: parseFloat((Math.random() * 1000).toFixed(2)),
+      regularMarketChange: parseFloat(((Math.random() - 0.5) * 20).toFixed(2)),
+      regularMarketChangePercent: parseFloat(((Math.random() - 0.5) * 2).toFixed(2)),
+      regularMarketVolume: Math.floor(Math.random() * 100000000),
+      marketCap: Math.floor(Math.random() * 1000000000000),
+    }));
 
-    // const validQuotes = quotes.filter(q => q !== null);
-    
     return NextResponse.json({
-      data: [], // Return empty data for now
+      data: mockQuotes,
       timestamp: new Date().toISOString()
     });
   } catch (error) {

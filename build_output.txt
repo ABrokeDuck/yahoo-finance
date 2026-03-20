@@ -1,0 +1,24 @@
+
+> yahoo-finance@0.1.0 build
+> next build
+
+▲ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.2s
+  Running TypeScript ...
+Failed to type check.
+
+./src/app/api/stocks/route.ts:18:31
+Type error: No overload matches this call.
+  The last overload gave the following error.
+    The 'this' context of type '(new (options?: YahooFinanceOptions | undefined) => { _opts: YahooFinanceOptions; _fetch: (this: YahooFinanceFetchThis, urlBase: string, params?: Record<string, string> | undefined, moduleOpts?: YahooFinanceFetchModuleOptions | undefined, func?: string | undefined, needsCrumb?: boolean | undefined) => Promise<...>; ...' is not assignable to method's 'this' of type 'ModuleThis'.
+
+  [90m16 |[0m       symbols.map([36masync[0m (symbol) => {
+  [90m17 |[0m         [36mtry[0m {
+[31m[1m>[0m [90m18 |[0m           [36mconst[0m quote = [36mawait[0m yahooFinance.quote(symbol);
+  [90m   |[0m                               [31m[1m^[0m
+  [90m19 |[0m           [36mreturn[0m quote;
+  [90m20 |[0m         } [36mcatch[0m (error) {
+  [90m21 |[0m           console.error([32m`Error fetching [0m${symbol[32m}:`[0m, error);
+Next.js build worker exited with code: 1 and signal: null

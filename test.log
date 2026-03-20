@@ -1,0 +1,15 @@
+/home/user/project/node_modules/yahoo-finance2/script/src/createYahooFinance.js:196
+            throw new Error("Call `const yahooFinance = new YahooFinance()` first.  Upgrading from v2?  See " +
+            ^
+
+Error: Call `const yahooFinance = new YahooFinance()` first.  Upgrading from v2?  See https://github.com/gadicc/yahoo-finance2/blob/dev/docs/UPGRADING.md.
+    at YahooFinance.quote (/home/user/project/node_modules/yahoo-finance2/script/src/createYahooFinance.js:196:19)
+    at [eval]:1:50
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3
+
+Node.js v20.20.1

@@ -1,0 +1,16 @@
+
+> yahoo-finance@0.1.0 lint
+> eslint
+
+
+/home/user/project/src/components/BleenkBadge.tsx
+  123:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/user/project/test-yahoo.js
+  2:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/home/user/project/test.js
+  1:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+✖ 3 problems (2 errors, 1 warning)
+

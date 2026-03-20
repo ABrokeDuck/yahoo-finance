@@ -1,14 +1,19 @@
-/home/user/project/test-yahoo.js:2
-const yahooFinance = new YahooFinance();
-                     ^
+node:internal/modules/cjs/loader:645
+      throw e;
+      ^
 
-TypeError: YahooFinance is not a constructor
-    at Object.<anonymous> (/home/user/project/test-yahoo.js:2:22)
-    at Module._compile (node:internal/modules/cjs/loader:1521:14)
-    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
-    at Module.load (node:internal/modules/cjs/loader:1266:32)
-    at Module._load (node:internal/modules/cjs/loader:1091:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
-    at node:internal/main/run_main_module:28:49
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /home/user/project/node_modules/yahoo-finance2/package.json
+    at exportsNotFound (node:internal/modules/esm/resolve:322:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:613:13)
+    at resolveExports (node:internal/modules/cjs/loader:638:36)
+    at Module._findPath (node:internal/modules/cjs/loader:711:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1193:27)
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/home/user/project/test-yahoo.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
 
 Node.js v20.20.1

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import yahooFinance from 'yahoo-finance2';
+// import YahooFinance from 'yahoo-finance2';
+// const yahooFinance = new YahooFinance();
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -12,22 +13,22 @@ export async function GET(request: Request) {
   }
 
   try {
-    const quotes = await Promise.all(
-      symbols.map(async (symbol) => {
-        try {
-          const quote = await yahooFinance.quote(symbol);
-          return quote;
-        } catch (error) {
-          console.error(`Error fetching ${symbol}:`, error);
-          return null;
-        }
-      })
-    );
+    // const quotes = await Promise.all(
+    //   symbols.map(async (symbol) => {
+    //     try {
+    //       const quote = await yahooFinance.quote(symbol);
+    //       return quote;
+    //     } catch (error) {
+    //       console.error(`Error fetching ${symbol}:`, error);
+    //       return null;
+    //     }
+    //   })
+    // );
 
-    const validQuotes = quotes.filter(q => q !== null);
+    // const validQuotes = quotes.filter(q => q !== null);
     
     return NextResponse.json({
-      data: validQuotes,
+      data: [], // Return empty data for now
       timestamp: new Date().toISOString()
     });
   } catch (error) {

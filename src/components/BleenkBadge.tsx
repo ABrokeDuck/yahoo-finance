@@ -22,7 +22,7 @@ export default function BleenkBadge() {
 
       if (!elementBelow) return
 
-      let current = elementBelow
+      let current: Element | null = elementBelow
 
       while (current && current !== document.body) {
         if (current instanceof HTMLElement) {
